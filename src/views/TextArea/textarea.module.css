@@ -1,0 +1,25 @@
+.TextArea {
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.Editor {
+  position: absolute;
+  margin: 1em;
+  min-width: 10em;
+  z-index: 2;
+  -webkit-user-modify: read-write-plaintext-only;
+}
+
+.Editor:focus {
+  outline: none;
+}
+
+.Viewer {
+  position: absolute;
+  margin: 1em;;
+  font-weight: bolder;
+  color: #ff8585;
+  z-index: 1;
+  user-select: none;
+}

@@ -1,28 +1,32 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {PureComponent} from 'react'
+import Layout from './layouts/Layout'
+import events from './tools/EventBus'
 
-class App extends Component {
+class App extends PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      text: '请导入范文'
+    }
+  }
+  
+  
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+        <Layout
+            text={this.state.text}
+        />
+    )
+  }
+  
+  componentDidMount() {
+    events.on('importArticle', article => {
+      console.log(article)
+      this.setState({
+        text: article || '请导入范文'
+      })
+    })
   }
 }
 
-export default App;
+export default App
