@@ -3,12 +3,13 @@ import styles from './button.module.css'
 
 class Button extends PureComponent {
   render() {
+    const { onClick, children } = this.props
     return (
         <div
-            onClick={this.props.handleClick}
+            onClick={onClick}
             className={styles.Button}
         >
-          {this.props.name}
+          {children}
         </div>
     )
   }

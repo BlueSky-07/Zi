@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
-import TextArea from '../views/TextArea/TextArea'
-import ToolBar from '../views/ToolBar/ToolBar'
+import TextArea from '../views/TextArea'
+import ToolBar from '../views/ToolBar'
 import styles from './layout.module.css'
 
 class Layout extends PureComponent {
@@ -8,9 +8,9 @@ class Layout extends PureComponent {
     return (
         <div className={styles.Container}>
           <ToolBar/>
-          <TextArea
-              text={this.props.text}
-          />
+          <TextArea>
+              {this.props.article}
+          </TextArea>
         </div>
     )
   }

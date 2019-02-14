@@ -6,7 +6,8 @@
 .Editor {
   position: absolute;
   margin: 1em;
-  min-width: 10em;
+  width: calc(100% - 2em);
+  min-height: 20em;
   z-index: 2;
   -webkit-user-modify: read-write-plaintext-only;
 }

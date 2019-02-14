@@ -1,31 +1,21 @@
 import React, {PureComponent} from 'react'
 import Layout from './layouts/Layout'
-import events from './tools/EventBus'
+import {$ArticleDidImport} from './symbols/signals'
+import {initState, update} from './tools/StateManager'
 
 class App extends PureComponent {
   constructor(props) {
     super(props)
-    this.state = {
-      text: '请导入范文'
-    }
+    this.state = initState()
+    update.call(this, $ArticleDidImport)
   }
-  
   
   render() {
     return (
         <Layout
-            text={this.state.text}
+            article={this.state.article}
         />
     )
-  }
-  
-  componentDidMount() {
-    events.on('importArticle', article => {
-      console.log(article)
-      this.setState({
-        text: article || '请导入范文'
-      })
-    })
   }
 }
 
