@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react'
 import styles from './textarea.module.css'
 import {receiveInput} from '../../actions'
-import {$ArticleDidImport, $InputDidReceive, $InputWillClear} from '../../symbols/signals'
+import {$ArticleDidImport, $InputDidReceive, $InputWillClear, $WindowDidResize} from '../../symbols/signals'
 import {store, update, reg} from '../../tools/StateManager'
 
 class TextArea extends PureComponent {
@@ -15,6 +15,7 @@ class TextArea extends PureComponent {
     return (
         <div className={styles.TextArea}>
           <div
+              contenteditable="true"
               className={styles.Editor}
               onInput={e => receiveInput({value: e.target.innerText})}
               ref={node => this.editorRef = node}
@@ -31,7 +32,7 @@ class TextArea extends PureComponent {
         reg($InputWillClear, () => {
           this.editorRef.innerText = ''
         }),
-        reg($ArticleDidImport, () => {
+        reg([$ArticleDidImport, $WindowDidResize], () => {
           setTimeout(() => {
             this.editorRef.style.height = this.viewerRef.offsetHeight + 'px'
           }, 0)

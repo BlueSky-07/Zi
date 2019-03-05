@@ -1,3 +1,30 @@
 .Container {
-  width: 100%;
+  max-width: 1080px;
+  margin: auto;
+}
+
+.Title {
+  position: absolute;
+  padding: 0 0.75em;
+  font-weight: 400;
+  font-size: 0;
+}
+
+.Title::after {
+  content: '字帖';
+  width: max-content;
+  font-weight: 400;
+  position: absolute;
+  padding: 1em 0.75em;
+  font-size: 32px;
+}
+
+@media screen and (min-width: 500px) {
+  .Title {
+    font-size: 36px;
+  }
+  
+  .Title::after {
+    content: '';
+  }
 }

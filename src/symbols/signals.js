@@ -1,3 +1,4 @@
+export const $WindowDidResize = Symbol('window-did-resize')
 export const $InputWillReceive = Symbol('input-will-receive')
 export const $InputDidReceive = Symbol('input-did-receive')
 export const $InputWillClear = Symbol('input-will-clear')

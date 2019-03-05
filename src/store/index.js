@@ -8,6 +8,7 @@ export const init = () => ({
   articles: {},
   input: '',
   rawArticle: '',
+  title: '字帖',
   article: '请导入范文'
 })
 

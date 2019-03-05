@@ -14,6 +14,7 @@ class App extends PureComponent {
     const {toolbar, articleselector, textarea} = this.state
     return (
         <Layout
+            title={this.state.title}
             modules={{
               toolbar, articleselector, textarea
             }}

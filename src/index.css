@@ -1,4 +1,5 @@
-html, body, #root {
+html, body {
+  min-width: 310px;
   width: 100%;
 }
 

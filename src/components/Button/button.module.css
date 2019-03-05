@@ -1,4 +1,5 @@
 .Button {
+  width: max-content;
   display: inline-block;
   border: none;
   padding: 0.5em;

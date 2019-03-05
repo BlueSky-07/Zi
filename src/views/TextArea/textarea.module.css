@@ -5,26 +5,34 @@
 
 .Editor {
   position: absolute;
-  margin: 1em;
+  max-width: 988px;
   width: calc(100% - 4em);
   min-height: 10em;
-  z-index: 2;
-  -webkit-user-modify: read-write-plaintext-only;
-  box-shadow: 0 0 1px #ccc;
+  left: 0;
+  right: 0;
+  margin: 1em auto;
   padding: 1em;
+  box-shadow: 0 0 1px #ddd;
   background-color: rgba(255, 255, 255, 0.75);
+  z-index: 2;
+  border: 1px solid #ccc;
 }
 
 .Editor:focus {
   outline: none;
+  border: 1px solid #000;
 }
 
 .Viewer {
+  max-width: 988px;
+  width: calc(100% - 4em);
   position: absolute;
-  margin: 1em;
+  left: 0;
+  right: 0;
+  margin: 1em auto;
   padding: 1em;
   font-weight: bolder;
   color: #ff0000;
-  z-index: 1;
   user-select: none;
+  z-index: 1;
 }

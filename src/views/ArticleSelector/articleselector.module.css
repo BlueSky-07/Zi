@@ -1,13 +1,13 @@
 .ArticleSelector {
   display: flex;
   justify-content: center;
-  align-items: stretch;
-  height: 20em;
+  align-items: center;
+  flex-direction: column-reverse;
+  height: 25em;
 }
 
 .List {
-  width: 30%;
-  margin: 2em 1em 2em 2em;
+  width: 90%;
   padding: 0;
   list-style: none;
   overflow-x: auto;
@@ -41,8 +41,9 @@
 }
 
 .Editor {
-  width: 65%;
-  margin: 2em 2em 2em 1em;
+  -webkit-appearance: none;
+  width: 85%;
+  height: 10em;
   padding: 0.5em 0 0.5em 0.5em;
   background-color: #fff;
   color: #333;
@@ -50,6 +51,49 @@
   line-height: 1.5em;
   overflow-y: auto;
   word-break: break-all;
-  border-radius: 2px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 0 1px #ddd;
+  border: 1px solid #ccc;
+  resize: none;
+  border-radius: 0;
+}
+
+.Editor:focus {
+  outline: none;
+  border: 1px solid #000;
+}
+
+
+@media screen and (min-width: 500px) {
+  /* mobile phone */
+  .ArticleSelector {
+    align-items: stretch;
+    flex-direction: unset;
+    height: 20em;
+  }
+  
+  .List {
+    width: 30%;
+    margin: 2em 1em 2em 2em;
+    padding: 0;
+  }
+  
+  .Editor {
+    width: 65%;
+    height: auto;
+    margin: 2em 2em 2em 1em;
+  }
+}
+
+@media screen and (min-width: 0\0
+) and (min-resolution: +72dpi) {
+  /* IE */
+  .ArticleSelector {
+    text-align: center;
+  }
+  
+  .Editor {
+    width: 95%;
+    height: 15em;
+    margin: auto;
+  }
 }

@@ -1,7 +1,5 @@
 export const css = (...classNames) => classNames.join(' ')
 
-export const encodeFilename = ({title = '', author = ''} = {}) => btoa(encodeURI(`${title}/${author}`)).slice(0, 16)
-
 export const handleArticleList = rawArticleList =>
     !rawArticleList ? []
         : rawArticleList.split('\n')

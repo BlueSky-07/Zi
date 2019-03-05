@@ -30,7 +30,7 @@ class ArticleSelector extends PureComponent {
           <textarea
               className={styles.Editor}
               placeholder="请在此粘贴范文"
-              onChange={e => pasteArticle({rawArticle: e.target.value})}
+              onChange={e => pasteArticle({article: e.target.value, title: ''})}
               ref={node => this.textareaRef = node}
           >
           </textarea>

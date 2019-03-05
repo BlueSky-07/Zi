@@ -29,11 +29,12 @@ export const importArticle = ({article}) => {
   clearInput()
 }
 
-export const pasteArticle = ({rawArticle}) => {
-  notify($.$ArticleWillPaste, {rawArticle})
-  store.rawArticle = rawArticle
-  notify($.$ArticleDidPaste, {rawArticle})
-  importArticle({article: rawArticle})
+export const pasteArticle = ({title, article}) => {
+  notify($.$ArticleWillPaste, {rawArticle: article})
+  store.rawArticle = article
+  store.title = title || init().title
+  notify($.$ArticleDidPaste, {rawArticle: article})
+  importArticle({article})
 }
 
 export const loadArticleList = () => {
@@ -47,14 +48,14 @@ export const loadArticleList = () => {
   }
 }
 
-export const selectArticle = ({url}) => {
+export const selectArticle = ({title, url}) => {
   if (store.articles[url]) {
-    pasteArticle({rawArticle: store.articles[url]})
+    pasteArticle(store.articles[url])
   } else {
     BSFetch.get(`articles/${url}.txt`, {restype: 'text'})
-        .then(rawArticle => {
-          store.articles[url] = rawArticle
-          pasteArticle({rawArticle})
+        .then(article => {
+          store.articles[url] = {title, article}
+          pasteArticle({title, article})
         })
   }
 }

@@ -1,0 +1,51 @@
+.Copyright {
+  position: relative;
+  top: 1em;
+  right: 1.5em;
+  font-size: 14px;
+  color: #777;
+  text-align: right;
+  user-select: none;
+}
+
+.Line {
+  margin: 0.25em;
+}
+
+.Link {
+  font-size: 12px;
+  color: #888;
+  font-style: italic;
+}
+
+.QRCode {
+  position: absolute;
+  width: 10em;
+  height: 10em;
+  background-color: #fff;
+  bottom: -5em;
+  right: 0;
+  border: 1px dashed #000;
+}
+
+.Pay {
+  font-weight: bold;
+  margin: 0 0.25em;
+  cursor: pointer;
+}
+
+.Alipay {
+  color: #0087ff;
+}
+
+.Wxpay {
+  color: #319A31;
+}
+
+.Bolder {
+  font-weight: bolder;
+}
+
+.Larger {
+  font-size: 14px;
+}

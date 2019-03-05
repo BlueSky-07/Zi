@@ -1,8 +1,9 @@
 {
   "name": "zi",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "字帖",
   "main": "app.js",
+  "homepage": ".",
   "repository": "https://github.com/BlueSky-07/Zi",
   "author": "BlueSky <admin@ihint.me>",
   "license": "MIT",
