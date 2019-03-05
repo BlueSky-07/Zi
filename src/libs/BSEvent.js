@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * Browser-Simple-EventEmitter
  * @BlueSky
@@ -43,7 +44,6 @@ class BSEvent {
     BSEvent[name] = this
   }
   
-  // eslint-disable-next-line
   on(name = '', callbacks = new Function(), once = false) {
     if (!name) {
       throw new Error('name must be a string')

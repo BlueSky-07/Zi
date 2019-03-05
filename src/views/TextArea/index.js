@@ -1,13 +1,13 @@
 import React, {PureComponent} from 'react'
 import styles from './textarea.module.css'
 import {receiveInput} from '../../actions'
-import {$InputDidReceive, $InputWillClear} from '../../symbols/signals'
-import {initState, update, wait} from '../../tools/StateManager'
+import {$ArticleDidImport, $InputDidReceive, $InputWillClear} from '../../symbols/signals'
+import {store, update, reg} from '../../tools/StateManager'
 
 class TextArea extends PureComponent {
   constructor(props) {
     super(props)
-    this.state = initState()
+    this.state = {...store}
     update.call(this, $InputDidReceive)
   }
   
@@ -17,9 +17,9 @@ class TextArea extends PureComponent {
           <div
               className={styles.Editor}
               onInput={e => receiveInput({value: e.target.innerText})}
-              ref={node => this.inputRef = node}
+              ref={node => this.editorRef = node}
           />
-          <div className={styles.Viewer}>
+          <div className={styles.Viewer} ref={node => this.viewerRef = node}>
             {this.props.children}
           </div>
         </div>
@@ -27,9 +27,21 @@ class TextArea extends PureComponent {
   }
   
   componentDidMount() {
-    wait($InputWillClear, () => {
-      this.inputRef.innerText = ''
-    })
+    this.actions = [
+        reg($InputWillClear, () => {
+          this.editorRef.innerText = ''
+        }),
+        reg($ArticleDidImport, () => {
+          setTimeout(() => {
+            this.editorRef.style.height = this.viewerRef.offsetHeight + 'px'
+          }, 0)
+        })
+    ]
+    this.actions.forEach(action => action.wait())
+  }
+  
+  componentWillUnmount() {
+    this.actions.forEach(action => action.stop())
   }
 }
 

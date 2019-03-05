@@ -1,13 +1,14 @@
 import React, {PureComponent} from 'react'
 import styles from './button.module.css'
+import {css} from '../../tools'
 
 class Button extends PureComponent {
   render() {
-    const { onClick, children } = this.props
+    const { className, onClick, children } = this.props
     return (
         <div
             onClick={onClick}
-            className={styles.Button}
+            className={css(className, styles.Button)}
         >
           {children}
         </div>

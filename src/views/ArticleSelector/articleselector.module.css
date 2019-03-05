@@ -1,0 +1,55 @@
+.ArticleSelector {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  height: 20em;
+}
+
+.List {
+  width: 30%;
+  margin: 2em 1em 2em 2em;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ListItem {
+  max-height: 10em;
+  margin-right: 0.25em;
+  padding: 0.25em 0.75em;
+  border-right: 0.05em solid #000;
+  writing-mode: vertical-rl;
+  cursor: pointer;
+  user-select: none;
+  border-bottom-left-radius: 0.5em;
+}
+
+.ListItem:hover {
+  background-color: #fafafa;
+}
+
+.ListItem::before {
+  content: "《";
+}
+
+.ListItem::after {
+  content: "》" attr(author);
+}
+
+.Editor {
+  width: 65%;
+  margin: 2em 2em 2em 1em;
+  padding: 0.5em 0 0.5em 0.5em;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5em;
+  overflow-y: auto;
+  word-break: break-all;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}

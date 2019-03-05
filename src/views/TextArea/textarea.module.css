@@ -6,10 +6,13 @@
 .Editor {
   position: absolute;
   margin: 1em;
-  width: calc(100% - 2em);
-  min-height: 20em;
+  width: calc(100% - 4em);
+  min-height: 10em;
   z-index: 2;
   -webkit-user-modify: read-write-plaintext-only;
+  box-shadow: 0 0 1px #ccc;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .Editor:focus {
@@ -18,9 +21,10 @@
 
 .Viewer {
   position: absolute;
-  margin: 1em;;
+  margin: 1em;
+  padding: 1em;
   font-weight: bolder;
-  color: #ff8585;
+  color: #ff0000;
   z-index: 1;
   user-select: none;
 }
