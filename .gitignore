@@ -5,3 +5,10 @@
 # NPM
 node_modules
 *.lock
+
+# Build
+*.js.map
+*.css.map
+asset-manifest.json
+precache-manifest.*.js
+service-worker.js
