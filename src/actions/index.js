@@ -59,3 +59,14 @@ export const selectArticle = ({title, url}) => {
         })
   }
 }
+
+export const switchDarkMode = () => {
+  store.darkMode = !store.darkMode
+  if (store.darkMode) {
+    notify($.$DarkModeWillEnable)
+    notify($.$DarkModeDidEnable)
+  } else {
+    notify($.$DarkModeWillDisable)
+    notify($.$DarkModeDidDisable)
+  }
+}

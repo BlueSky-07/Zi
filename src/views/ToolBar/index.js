@@ -2,14 +2,15 @@ import React, {PureComponent} from 'react'
 import Button from '../../components/Button'
 import RadioButton from '../../components/RadioButton'
 import styles from './toolbar.module.css'
-import {clickImportArticleButton} from '../../actions'
+import {clickImportArticleButton, switchDarkMode} from '../../actions'
+import {store, update} from '../../tools/StateManager'
+import {$DarkModeDidDisable, $DarkModeDidEnable} from '../../symbols/signals'
 
 class ToolBar extends PureComponent {
   constructor(props) {
     super(props)
-    this.state = {
-      boolean: false
-    }
+    this.state = {...store}
+    update.call(this, $DarkModeDidEnable, $DarkModeDidDisable)
   }
 
   render() {
@@ -23,8 +24,8 @@ class ToolBar extends PureComponent {
           </Button>
           <RadioButton
             className={styles.ToolBarButton}
-            checked={this.state.boolean}
-            onClick={() => {this.setState({boolean: !this.state.boolean})}}
+            checked={this.state.darkMode}
+            onClick={() => switchDarkMode()}
           >
             夜间模式
           </RadioButton>

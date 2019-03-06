@@ -5,3 +5,11 @@
 .RadioButtonUnchecked {
   background-color: #4c59af;
 }
+
+:global(.dark-mode) .RadioButtonChecked {
+  background-color: #165584;
+}
+
+:global(.dark-mode) .RadioButtonUnchecked {
+  background-color: #101752;
+}

@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import Layout from './layouts/Layout'
-import {$ArticleDidImport, $ArticleImportButtonClicked} from './symbols/signals'
+import { $ArticleDidImport, $ArticleImportButtonClicked, $DarkModeWillEnable, $DarkModeWillDisable } from './symbols/signals'
 import {store, update, reg} from './tools/StateManager'
 
 class App extends PureComponent {
@@ -27,6 +27,12 @@ class App extends PureComponent {
     this.actions = [
       reg($ArticleImportButtonClicked, () => {
         this.setState({...store.modules})
+      }),
+      reg($DarkModeWillEnable, () => {
+        document.body.className="dark-mode"
+      }),
+      reg($DarkModeWillDisable, () => {
+        document.body.className=""
       })
     ]
     this.actions.forEach(action => action.wait())

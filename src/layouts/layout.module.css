@@ -28,3 +28,7 @@
     content: '';
   }
 }
+
+:global(.dark-mode) .Title {
+  color: #ccc;
+}

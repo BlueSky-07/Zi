@@ -9,7 +9,8 @@ export const init = () => ({
   input: '',
   rawArticle: '',
   title: '字帖',
-  article: '请导入范文'
+  article: '请导入范文',
+  darkMode: false
 })
 
 export const store = init()

@@ -49,3 +49,7 @@
 .Larger {
   font-size: 14px;
 }
+
+:global(.dark-mode) .Copyright * {
+  color: #ccc;
+}

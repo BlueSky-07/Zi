@@ -97,3 +97,24 @@
     margin: auto;
   }
 }
+
+:global(.dark-mode) .ArticleSelector * {
+  color: #ccc;
+  background-color: #333;
+}
+
+
+:global(.dark-mode) .ArticleSelector .ListItem:hover {
+  color: #fff;
+  background-color: #444;
+}
+
+:global(.dark-mode) .ArticleSelector .Editor {
+  border: 1px solid #333;
+  box-shadow: 0 0 1px #000;
+}
+
+:global(.dark-mode) .ArticleSelector .Editor:focus {
+  border: 1px solid #000;
+  box-shadow: 0 0 1px #fff;
+}

@@ -1,7 +1,6 @@
 .Button {
   width: max-content;
   display: inline-block;
-  border: none;
   padding: 0.5em;
   font-size: 1em;
   background-color: #666;
@@ -11,9 +10,21 @@
   font-weight: bold;
   text-shadow: 0 0 1px #000;
   box-shadow: 0 0 1px #000;
+  border: solid 1px #777;
   user-select: none;
 }
 
 .Button:hover {
   box-shadow: 0 0 1em #999;
+}
+
+:global(.dark-mode) .Button {
+  color: #ccc;
+  background-color: #555;
+}
+
+:global(.dark-mode) .Button:hover {
+  box-shadow: none;
+  color: #fff;
+  border: solid 1px #fff;
 }

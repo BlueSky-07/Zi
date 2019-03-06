@@ -19,7 +19,7 @@ class Copyright extends PureComponent {
   render() {
     return (
         <div className={styles.Copyright}>
-          <p className={styles.Line}>@ BlueSky | v0.3.0 2019.3.6 更新</p>
+          <p className={styles.Line}>@ BlueSky | v1.0.0 2019.3.6 更新</p>
           <p className={styles.Line}>
             <a className={styles.Link} href="https://github.com/BlueSky-07/Zi" target="_blank" rel="noopener noreferrer">https://github.com/BlueSky-07/Zi</a>
           </p>
