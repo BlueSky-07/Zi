@@ -4,7 +4,7 @@ import {css} from '../../tools'
 
 const QRCODE_LINKS = {
   ALIPAY: 'https://api.ihint.me/qr.php?HTTPS://QR.ALIPAY.COM/FKX05370OGFIX8QOBKXS35',
-  WXPAY: 'https://api.ihint.me/qr.php?wxp://f2f0upVZDeiNOEKSu8a-SgK7Jgy-oDkxhADk'
+  WXPAY: 'https://api.ihint.me/wxpay.jpg'
 }
 
 class Copyright extends PureComponent {
