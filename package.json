@@ -1,6 +1,6 @@
 {
   "name": "zi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "字帖",
   "main": "app.js",
   "homepage": ".",
@@ -8,9 +8,9 @@
   "author": "BlueSky <admin@ihint.me>",
   "license": "MIT",
   "dependencies": {
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "react-scripts": "^2.1.5"
+    "react": "^18",
+    "react-dom": "^18",
+    "react-scripts": "^5"
   },
   "scripts": {
     "start": "react-scripts start",
